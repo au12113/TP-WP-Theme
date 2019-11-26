@@ -1,0 +1,53 @@
+/* 
+    Theme name: Tang Park Ubon Theme
+    Author: wasupont
+    Version: 0.1
+*/
+
+@media screen and (min-width: 1024px) {
+    .posts-container {
+        display: grid;
+        justify-content: center;
+        grid-gap: 0px;
+        grid-template-columns: 48% 48% auto auto;
+        /* background-color: #2196F3; */
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .posts-container {
+        display: block;
+        justify-content: center;
+        /* background-color: #2196F3; */
+    }
+}
+
+.header {
+    padding: 2rem 0rem;
+    margin-bottom: 2rem;
+    background-color: rgba(68,73,82);
+    color: #e9ecef;
+    border-radius: 0;
+    text-align: center !important;
+}
+
+.content-zone {
+    margin-top: -32px;
+    padding: 0px;
+    background-color: rgba(164,172,180);
+}
+
+.post {
+    /* background-color: rgba(255, 255, 255, 0.9); */
+    background-color:rgba(68,73,82,0.75);
+    border-radius: 5px;
+    text-align: left;
+    margin: 10px 5px 10px 5px;
+    padding: 20px 20px;
+    color: white;
+    font-family: 'Krub', sans-serif;
+}
+
+.highlight {
+    font-size: 25px;
+}
