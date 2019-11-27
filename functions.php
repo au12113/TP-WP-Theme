@@ -3,6 +3,9 @@
   require_once('lib/bootstrap.php');
   require_once('lib/wordpress-helpers.php');
 
+  /* to enable featured image including choose featured image in post editor */
+  add_theme_support( 'post-thumbnails' );
+
   function tp_highlight() {
     // setup_postdata($posts);
     tp_post();
@@ -11,7 +14,11 @@
 
   function tp_post() {
     printf(
-      '<div class=""><a href="%s">', 
+      '<div class="tp-thumbnail">%s</div>',
+      get_the_post_thumbnail(null, 'medium', array('class' => 'thumbnail'))
+    );
+    printf(
+      '<div><a href="%s">', 
       esc_url(get_permalink())
     );
     printf(
@@ -24,7 +31,7 @@
     );
     printf(
       '<div>%s',
-      excerpt(20)
+      excerpt(10)
     );
     printf(
       "\t".'%s</div>',
