@@ -1,4 +1,16 @@
 <?php
+
+  /* to enable featured image including choose featured image in post editor */
+  add_theme_support( 'post-thumbnails' );
+  /* add excerpt function to post editor */
+  add_post_type_support( 'page', 'excerpt' );
+
+  function get_featured_image_url() {
+    $post_thumbnail_id = get_post_thumbnail_id($post->ID);
+    $post_thumbnail_url = wp_get_attachment_url( $post_thumbnail_id );
+    return $post_thumbnail_url;
+  } 
+  
   function excerpt($limit) {
     $excerpt = explode(' ', get_the_excerpt(), $limit);
     if (count($excerpt)>=$limit) {

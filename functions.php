@@ -3,20 +3,12 @@
   require_once('lib/bootstrap.php');
   require_once('lib/wordpress-helpers.php');
 
-  /* to enable featured image including choose featured image in post editor */
-  add_theme_support( 'post-thumbnails' );
-
   function tp_highlight() {
-    // setup_postdata($posts);
-    tp_post();
-    // wp_reset_postdata();
+    tp_post('highlight');
   }
 
-  function tp_post() {
-    printf(
-      '<div class="tp-thumbnail">%s</div>',
-      get_the_post_thumbnail(null, 'medium', array('class' => 'thumbnail'))
-    );
+  function tp_post($category='Uncategorized') {
+    tp_featured_image();
     printf(
       '<div><a href="%s">', 
       esc_url(get_permalink())
@@ -43,6 +35,5 @@
         comments_number('No comment in here.', '1 comment', '%s comments')
       )
     );
-    // printf('</div>');
   }
 ?>
